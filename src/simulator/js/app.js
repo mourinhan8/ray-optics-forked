@@ -157,16 +157,16 @@ async function startApp() {
 
   simulator.on('simulationPause', function () {
     document.getElementById('forceStop').style.display = '';
-    document.getElementById('simulatorStatus').innerHTML = i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.rayCount'), value: simulator.processedRayCount}) + '<br>' + i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.totalTruncation'), value: simulator.totalTruncation.toFixed(3)}) + '<br>' + (scene.colorMode == 'default' ? i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.brightnessScale'), value: ((simulator.brightnessScale <= 0) ? "-" : simulator.brightnessScale.toFixed(3))}) + '<br>' : '') + i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.timeElapsed') + ' (ms)', value: (new Date() - simulator.simulationStartTime)}) + '<br>';
+    document.getElementById('simulatorStatus').innerHTML = i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.rayCount'), value: simulator.processedRayCount }) + '<br>' + i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.totalTruncation'), value: simulator.totalTruncation.toFixed(3) }) + '<br>' + (scene.colorMode == 'default' ? i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.brightnessScale'), value: ((simulator.brightnessScale <= 0) ? "-" : simulator.brightnessScale.toFixed(3)) }) + '<br>' : '') + i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.timeElapsed') + ' (ms)', value: (new Date() - simulator.simulationStartTime) }) + '<br>';
   });
 
   simulator.on('simulationStop', function () {
-    document.getElementById('simulatorStatus').innerHTML = i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.rayCount'), value: simulator.processedRayCount}) + '<br>' + i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.totalTruncation'), value: simulator.totalTruncation.toFixed(3)}) + '<br>' + (scene.colorMode == 'default' ? i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.brightnessScale'), value: ((simulator.brightnessScale <= 0) ? "-" : simulator.brightnessScale.toFixed(3))}) + '<br>' : '') + i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.timeElapsed') + ' (ms)', value: (new Date() - simulator.simulationStartTime)}) + '<br>' + i18next.t('simulator:statusBox.forceStopped');
+    document.getElementById('simulatorStatus').innerHTML = i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.rayCount'), value: simulator.processedRayCount }) + '<br>' + i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.totalTruncation'), value: simulator.totalTruncation.toFixed(3) }) + '<br>' + (scene.colorMode == 'default' ? i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.brightnessScale'), value: ((simulator.brightnessScale <= 0) ? "-" : simulator.brightnessScale.toFixed(3)) }) + '<br>' : '') + i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.timeElapsed') + ' (ms)', value: (new Date() - simulator.simulationStartTime) }) + '<br>' + i18next.t('simulator:statusBox.forceStopped');
     document.getElementById('forceStop').style.display = 'none';
   });
 
   simulator.on('simulationComplete', function () {
-    document.getElementById('simulatorStatus').innerHTML = i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.rayCount'), value: simulator.processedRayCount}) + '<br>' + i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.totalTruncation'), value: simulator.totalTruncation.toFixed(3)}) + '<br>' + (scene.colorMode == 'default' ? i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.brightnessScale'), value: ((simulator.brightnessScale <= 0) ? "-" : simulator.brightnessScale.toFixed(3))}) + '<br>' : '') + i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.timeElapsed') + ' (ms)', value: (new Date() - simulator.simulationStartTime)});
+    document.getElementById('simulatorStatus').innerHTML = i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.rayCount'), value: simulator.processedRayCount }) + '<br>' + i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.totalTruncation'), value: simulator.totalTruncation.toFixed(3) }) + '<br>' + (scene.colorMode == 'default' ? i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.brightnessScale'), value: ((simulator.brightnessScale <= 0) ? "-" : simulator.brightnessScale.toFixed(3)) }) + '<br>' : '') + i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.timeElapsed') + ' (ms)', value: (new Date() - simulator.simulationStartTime) });
     document.getElementById('forceStop').style.display = 'none';
   });
 
@@ -204,9 +204,9 @@ async function startApp() {
 
   editor.on('mouseCoordinateChange', function (e) {
     if (e.mousePos) {
-      document.getElementById('mouseCoordinates').innerHTML = i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.mouseCoordinates'), value: "(" + e.mousePos.x + ", " + e.mousePos.y + ")"});
+      document.getElementById('mouseCoordinates').innerHTML = i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.mouseCoordinates'), value: "(" + e.mousePos.x + ", " + e.mousePos.y + ")" });
     } else {
-      document.getElementById('mouseCoordinates').innerHTML = i18next.t('main:meta.colon', {name: i18next.t('simulator:statusBox.mouseCoordinates'), value: '-'});
+      document.getElementById('mouseCoordinates').innerHTML = i18next.t('main:meta.colon', { name: i18next.t('simulator:statusBox.mouseCoordinates'), value: '-' });
     }
   });
 
@@ -560,12 +560,12 @@ async function startApp() {
   document.getElementById('undo').onclick = function () {
     this.blur();
     editor.undo();
-  }
+  };
   document.getElementById('undo_mobile').onclick = document.getElementById('undo').onclick;
   document.getElementById('redo').onclick = function () {
     this.blur();
     editor.redo();
-  }
+  };
   document.getElementById('redo_mobile').onclick = document.getElementById('redo').onclick;
   document.getElementById('reset').onclick = function () {
     history.replaceState('', document.title, window.location.pathname + window.location.search);
@@ -579,7 +579,7 @@ async function startApp() {
       aceEditor.session.setValue(editor.lastActionJson);
     }
   };
-  document.getElementById('reset_mobile').onclick = document.getElementById('reset').onclick
+  document.getElementById('reset_mobile').onclick = document.getElementById('reset').onclick;
 
   document.getElementById('get_link').onclick = getLink;
   document.getElementById('get_link_mobile').onclick = getLink;
@@ -592,7 +592,7 @@ async function startApp() {
   document.getElementById('open').onclick = function () {
     document.getElementById('openfile').click();
   };
-  document.getElementById('open_mobile').onclick = document.getElementById('open').onclick
+  document.getElementById('open_mobile').onclick = document.getElementById('open').onclick;
   document.getElementById('view_gallery').onclick = function () {
     window.open(mapURL('/gallery'));
   };
@@ -601,6 +601,8 @@ async function startApp() {
 
   document.getElementById('openfile').onchange = function () {
     openFile(this.files[0]);
+    const newUrl = window.location.origin + window.location.pathname;
+    window.history.replaceState({}, document.title, newUrl);
   };
 
   document.getElementById('simulateColors').onclick = function () {
@@ -744,12 +746,12 @@ async function startApp() {
     document.getElementById('gridSize_mobile').value = scene.gridSize;
     simulator.updateSimulation(true, false);
     editor.onActionComplete();
-  }
+  };
   document.getElementById('gridSize_mobile').onchange = document.getElementById('gridSize').onchange;
 
   document.getElementById('gridSize').onclick = function () {
     this.select();
-  }
+  };
   document.getElementById('gridSize_mobile').onclick = document.getElementById('gridSize').onclick;
 
   document.getElementById('gridSize').onkeydown = function (e) {
@@ -766,12 +768,12 @@ async function startApp() {
     }
     simulator.updateSimulation(false, true);
     editor.onActionComplete();
-  }
+  };
   document.getElementById('observer_size_mobile').onchange = document.getElementById('observer_size').onchange;
 
   document.getElementById('observer_size').onclick = function () {
     this.select();
-  }
+  };
   document.getElementById('observer_size_mobile').onclick = document.getElementById('observer_size').onclick;
 
   document.getElementById('observer_size').onkeydown = function (e) {
@@ -796,12 +798,12 @@ async function startApp() {
     editor.setScale(scene.scale);
     simulator.updateSimulation();
     editor.onActionComplete();
-  }
+  };
   document.getElementById('lengthScale_mobile').onchange = document.getElementById('lengthScale').onchange;
 
   document.getElementById('lengthScale').onclick = function () {
     this.select();
-  }
+  };
   document.getElementById('lengthScale_mobile').onclick = document.getElementById('lengthScale').onclick;
 
   document.getElementById('lengthScale').onkeydown = function (e) {
@@ -815,12 +817,12 @@ async function startApp() {
     editor.setScale(scene.scale * 1.1);
     editor.onActionComplete();
     this.blur();
-  }
+  };
   document.getElementById('zoomMinus').onclick = function () {
     editor.setScale(scene.scale / 1.1);
     editor.onActionComplete();
     this.blur();
-  }
+  };
   document.getElementById('zoomPlus_mobile').onclick = document.getElementById('zoomPlus').onclick;
   document.getElementById('zoomMinus_mobile').onclick = document.getElementById('zoomMinus').onclick;
 
@@ -930,7 +932,7 @@ async function startApp() {
     objBar.shouldApplyToAll = checked;
     document.getElementById('apply_to_all').checked = checked;
     document.getElementById('apply_to_all_mobile').checked = checked;
-  }
+  };
   document.getElementById('apply_to_all_mobile').onclick = document.getElementById('apply_to_all').onclick;
 
   document.getElementById('copy').onclick = function () {
@@ -1048,7 +1050,7 @@ async function startApp() {
     error = `Error: ${msg} at ${url}`;
     document.getElementById('welcome').style.display = 'none';
     updateErrorAndWarning();
-  }
+  };
 
   // Update the scene when the URL changes
   window.onpopstate = function (event) {
@@ -1089,6 +1091,10 @@ async function startApp() {
   document.getElementById('footer-left').style.display = '';
   document.getElementById('footer-right').style.display = '';
   document.getElementById('canvas-container').style.display = '';
+  const fileName = getQueryParam("file");
+  if (fileName) {
+    openFileFromQuery(fileName);
+  }
 }
 
 startApp();
@@ -1122,7 +1128,7 @@ const f = function (e) {
   for (let ele of list) {
     ele.style.height = maxScrollHeight + 'px';
   }
-}
+};
 document.getElementById('toolbar-mobile').addEventListener('shown.bs.dropdown', f);
 document.getElementById('toolbar-mobile').addEventListener('hidden.bs.dropdown', f);
 
@@ -1200,46 +1206,46 @@ function initUIText() {
   setText('redo', null, i18next.t('simulator:file.redo.title'));
   setText('file_text', i18next.t('simulator:file.title'));
   setText('sourceToolsDropdown', i18next.t('main:tools.categories.lightSource'));
-  setText('tool_SingleRay_label', i18next.t('main:tools.SingleRay.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.SingleRay.description'), sub: i18next.t('main:tools.SingleRay.instruction')}), 'SingleRay.svg');
-  setText('tool_Beam_label', i18next.t('main:tools.Beam.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.Beam.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'Beam.svg');
-  setText('tool_PointSource_label', i18next.t('main:tools.PointSource.title') + ' (360\u00B0)', null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.PointSource.description'), sub: i18next.t('main:tools.common.clickInstruction')}), 'PointSource.svg');
-  setText('tool_AngleSource_label', i18next.t('main:tools.PointSource.title') + ' (<360\u00B0)', null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.AngleSource.description'), sub: i18next.t('main:tools.SingleRay.instruction')}), 'AngleSource.svg');
+  setText('tool_SingleRay_label', i18next.t('main:tools.SingleRay.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.SingleRay.description'), sub: i18next.t('main:tools.SingleRay.instruction') }), 'SingleRay.svg');
+  setText('tool_Beam_label', i18next.t('main:tools.Beam.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.Beam.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'Beam.svg');
+  setText('tool_PointSource_label', i18next.t('main:tools.PointSource.title') + ' (360\u00B0)', null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.PointSource.description'), sub: i18next.t('main:tools.common.clickInstruction') }), 'PointSource.svg');
+  setText('tool_AngleSource_label', i18next.t('main:tools.PointSource.title') + ' (<360\u00B0)', null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.AngleSource.description'), sub: i18next.t('main:tools.SingleRay.instruction') }), 'AngleSource.svg');
   setText('mirrorToolsDropdown', i18next.t('main:tools.categories.mirror'));
-  setText('tool_Mirror_label', i18next.t('main:tools.Mirror.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.Mirror.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'Mirror.svg');
-  setText('tool_ArcMirror_label', i18next.t('main:tools.ArcMirror.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.ArcMirror.description'), sub: i18next.t('main:tools.ArcMirror.instruction')}), 'ArcMirror.svg');
-  setText('tool_ConcaveDiffractionGrating_label', i18next.t('main:tools.ConcaveDiffractionGrating.title') + '<sup>Beta</sup>', null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.ConcaveDiffractionGrating.description'), sub: i18next.t('main:tools.ArcMirror.instruction')}), 'ConcaveDiffractionGrating.svg');
-  setText('tool_ParabolicMirror_label', i18next.t('main:tools.ParabolicMirror.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.ParabolicMirror.description'), sub: i18next.t('main:tools.ParabolicMirror.instruction')}), 'ParabolicMirror.svg');
-  setText('tool_CustomMirror_label', i18next.t('main:tools.CustomMirror.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.CustomMirror.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'CustomMirror.svg');
-  setText('tool_IdealMirror_label', i18next.t('main:tools.IdealMirror.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.IdealMirror.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'IdealMirror.svg');
-  setText('tool_BeamSplitter_label', i18next.t('main:tools.BeamSplitter.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.BeamSplitter.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'BeamSplitter.svg');
+  setText('tool_Mirror_label', i18next.t('main:tools.Mirror.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.Mirror.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'Mirror.svg');
+  setText('tool_ArcMirror_label', i18next.t('main:tools.ArcMirror.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.ArcMirror.description'), sub: i18next.t('main:tools.ArcMirror.instruction') }), 'ArcMirror.svg');
+  setText('tool_ConcaveDiffractionGrating_label', i18next.t('main:tools.ConcaveDiffractionGrating.title') + '<sup>Beta</sup>', null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.ConcaveDiffractionGrating.description'), sub: i18next.t('main:tools.ArcMirror.instruction') }), 'ConcaveDiffractionGrating.svg');
+  setText('tool_ParabolicMirror_label', i18next.t('main:tools.ParabolicMirror.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.ParabolicMirror.description'), sub: i18next.t('main:tools.ParabolicMirror.instruction') }), 'ParabolicMirror.svg');
+  setText('tool_CustomMirror_label', i18next.t('main:tools.CustomMirror.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.CustomMirror.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'CustomMirror.svg');
+  setText('tool_IdealMirror_label', i18next.t('main:tools.IdealMirror.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.IdealMirror.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'IdealMirror.svg');
+  setText('tool_BeamSplitter_label', i18next.t('main:tools.BeamSplitter.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.BeamSplitter.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'BeamSplitter.svg');
   setText('glassToolsDropdown', i18next.t('main:tools.categories.glass'));
-  setText('tool_PlaneGlass_label', i18next.t('main:tools.PlaneGlass.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.PlaneGlass.description'), sub: i18next.t('main:tools.PlaneGlass.instruction')}), 'PlaneGlass.svg');
-  setText('tool_CircleGlass_label', i18next.t('main:tools.CircleGlass.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.CircleGlass.description'), sub: i18next.t('main:tools.common.circleInstruction')}), 'CircleGlass.svg');
-  setText('tool_Glass_label', i18next.t('main:tools.Glass.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.Glass.description'), sub: i18next.t('main:tools.Glass.instruction')}), 'Glass.svg');
-  setText('tool_CustomGlass_label', i18next.t('main:tools.CustomGlass.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.CustomGlass.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'CustomGlass.svg');
-  setText('tool_IdealLens_label', i18next.t('main:tools.IdealLens.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.IdealLens.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'IdealLens.svg');
-  setText('tool_SphericalLens_label', i18next.t('main:tools.SphericalLens.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.SphericalLens.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'SphericalLens.svg');
-  setText('tool_CircleGrinGlass_label', i18next.t('main:tools.CircleGrinGlass.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.CircleGrinGlass.description'), sub: i18next.t('main:tools.common.circleInstruction')}), 'CircleGrinGlass.svg');
-  setText('tool_GrinGlass_label', i18next.t('main:tools.GrinGlass.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.GrinGlass.description'), sub: i18next.t('main:tools.GrinGlass.instruction')}) + '<br>' + i18next.t('main:tools.GrinGlass.warning'), 'GrinGlass.svg');
+  setText('tool_PlaneGlass_label', i18next.t('main:tools.PlaneGlass.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.PlaneGlass.description'), sub: i18next.t('main:tools.PlaneGlass.instruction') }), 'PlaneGlass.svg');
+  setText('tool_CircleGlass_label', i18next.t('main:tools.CircleGlass.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.CircleGlass.description'), sub: i18next.t('main:tools.common.circleInstruction') }), 'CircleGlass.svg');
+  setText('tool_Glass_label', i18next.t('main:tools.Glass.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.Glass.description'), sub: i18next.t('main:tools.Glass.instruction') }), 'Glass.svg');
+  setText('tool_CustomGlass_label', i18next.t('main:tools.CustomGlass.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.CustomGlass.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'CustomGlass.svg');
+  setText('tool_IdealLens_label', i18next.t('main:tools.IdealLens.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.IdealLens.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'IdealLens.svg');
+  setText('tool_SphericalLens_label', i18next.t('main:tools.SphericalLens.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.SphericalLens.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'SphericalLens.svg');
+  setText('tool_CircleGrinGlass_label', i18next.t('main:tools.CircleGrinGlass.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.CircleGrinGlass.description'), sub: i18next.t('main:tools.common.circleInstruction') }), 'CircleGrinGlass.svg');
+  setText('tool_GrinGlass_label', i18next.t('main:tools.GrinGlass.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.GrinGlass.description'), sub: i18next.t('main:tools.GrinGlass.instruction') }) + '<br>' + i18next.t('main:tools.GrinGlass.warning'), 'GrinGlass.svg');
   setText('blockerToolsDropdown', i18next.t('main:tools.categories.blocker'));
-  setText('tool_Blocker_label', i18next.t('main:tools.Blocker.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.Blocker.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'Blocker.svg');
-  setText('tool_CircleBlocker_label', i18next.t('main:tools.CircleBlocker.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.CircleBlocker.description'), sub: i18next.t('main:tools.common.circleInstruction')}), 'CircleBlocker.svg');
-  setText('tool_Aperture_label', i18next.t('main:tools.Aperture.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.Aperture.description'), sub: i18next.t('main:tools.Aperture.instruction')}), 'Aperture.svg');
-  setText('tool_DiffractionGrating_label', i18next.t('main:tools.DiffractionGrating.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.DiffractionGrating.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'DiffractionGrating.svg');
+  setText('tool_Blocker_label', i18next.t('main:tools.Blocker.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.Blocker.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'Blocker.svg');
+  setText('tool_CircleBlocker_label', i18next.t('main:tools.CircleBlocker.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.CircleBlocker.description'), sub: i18next.t('main:tools.common.circleInstruction') }), 'CircleBlocker.svg');
+  setText('tool_Aperture_label', i18next.t('main:tools.Aperture.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.Aperture.description'), sub: i18next.t('main:tools.Aperture.instruction') }), 'Aperture.svg');
+  setText('tool_DiffractionGrating_label', i18next.t('main:tools.DiffractionGrating.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.DiffractionGrating.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'DiffractionGrating.svg');
   setText('moreToolsDropdown', i18next.t('main:tools.categories.other'));
-  setText('tool_Ruler_label', i18next.t('main:tools.Ruler.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.Ruler.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'Ruler.svg');
-  setText('tool_Protractor_label', i18next.t('main:tools.Protractor.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.Protractor.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'Protractor.svg');
-  setText('tool_Detector_label', i18next.t('main:tools.Detector.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.Detector.description'), sub: i18next.t('main:tools.common.lineInstruction')}), 'Detector.svg');
-  setText('tool_TextLabel_label', i18next.t('main:tools.TextLabel.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.TextLabel.description'), sub: i18next.t('main:tools.common.clickInstruction')}));
-  setText('tool_LineArrow_label', i18next.t('main:tools.LineArrow.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.LineArrow.description'), sub: i18next.t('main:tools.common.lineInstruction')}));
-  setText('tool_Drawing_label', i18next.t('main:tools.Drawing.title'), null, i18next.t('main:meta.parentheses', {main: i18next.t('main:tools.Drawing.description'), sub: i18next.t('main:tools.Drawing.instruction')}));
+  setText('tool_Ruler_label', i18next.t('main:tools.Ruler.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.Ruler.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'Ruler.svg');
+  setText('tool_Protractor_label', i18next.t('main:tools.Protractor.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.Protractor.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'Protractor.svg');
+  setText('tool_Detector_label', i18next.t('main:tools.Detector.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.Detector.description'), sub: i18next.t('main:tools.common.lineInstruction') }), 'Detector.svg');
+  setText('tool_TextLabel_label', i18next.t('main:tools.TextLabel.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.TextLabel.description'), sub: i18next.t('main:tools.common.clickInstruction') }));
+  setText('tool_LineArrow_label', i18next.t('main:tools.LineArrow.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.LineArrow.description'), sub: i18next.t('main:tools.common.lineInstruction') }));
+  setText('tool_Drawing_label', i18next.t('main:tools.Drawing.title'), null, i18next.t('main:meta.parentheses', { main: i18next.t('main:tools.Drawing.description'), sub: i18next.t('main:tools.Drawing.instruction') }));
   setText('import_modules', '<i>' + i18next.t('main:tools.modules.import') + '</i>');
   setText('tool__label', null, i18next.t('main:tools.moveView.title'), i18next.t('main:tools.moveView.description'));
   setText('tools_text', i18next.t('main:tools.title'));
   setText('mode_rays_label', null, i18next.t('main:view.rays.title'), i18next.t('main:view.rays.description'), 'normal.svg');
   setText('mode_extended_label', null, i18next.t('main:view.extended.title'), i18next.t('main:view.extended.description') + '<br>' + i18next.t('main:view.extended.simulateColorsNote'), 'extended_rays.svg');
   setText('mode_images_label', null, i18next.t('main:view.images.title'), i18next.t('main:view.images.description') + '<br>' + i18next.t('main:view.images.simulateColorsNote'), 'all_images.svg');
-  setText('mode_observer_label', null, i18next.t('main:view.observer.title'), i18next.t('main:meta.parentheses', {main: i18next.t('main:view.observer.description'), sub: i18next.t('main:view.observer.instruction')}) + '<br>' + i18next.t('main:view.observer.simulateColorsNote'), 'seen_by_observer.svg');
+  setText('mode_observer_label', null, i18next.t('main:view.observer.title'), i18next.t('main:meta.parentheses', { main: i18next.t('main:view.observer.description'), sub: i18next.t('main:view.observer.instruction') }) + '<br>' + i18next.t('main:view.observer.simulateColorsNote'), 'seen_by_observer.svg');
   setText('view_text', i18next.t('main:view.title'));
   setText('rayDensity_popover', null, null, i18next.t('simulator:settings.rayDensity.description'));
   setText('rayDensity_text', i18next.t('simulator:settings.rayDensity.title'));
@@ -1414,7 +1420,7 @@ function initUIText() {
 
   // Populate the language list
   const languageList = document.getElementById('language_list');
-  
+
   for (const locale in window.localeData) {
     const languageName = window.localeData[locale].name;
     const completeness = Math.round(window.localeData[locale].numStrings / window.localeData.en.numStrings * 100);
@@ -1484,7 +1490,7 @@ function setText(id, text, title, popover, image) {
   if (text != null) {
     elem.innerHTML = text;
   }
-  
+
   if (popoversEnabled) {
     if (title != null) {
       elem.setAttribute('title', title);
@@ -1645,9 +1651,9 @@ function enableJsonEditor() {
   aceEditor.session.setUseWrapMode(true);
   aceEditor.session.setUseSoftTabs(true);
   aceEditor.session.setTabSize(2);
-  aceEditor.setHighlightActiveLine(false)
-  aceEditor.container.style.background = "transparent"
-  aceEditor.container.getElementsByClassName('ace_gutter')[0].style.background = "transparent"
+  aceEditor.setHighlightActiveLine(false);
+  aceEditor.container.style.background = "transparent";
+  aceEditor.container.getElementsByClassName('ace_gutter')[0].style.background = "transparent";
   aceEditor.session.setValue(editor.lastActionJson);
 
   var debounceTimer;
@@ -1755,6 +1761,10 @@ function updateModuleObjsMenu() {
 
 }
 
+function getQueryParam(name) {
+  return new URLSearchParams(window.location.search).get(name);
+}
+
 function disableJsonEditor() {
   aceEditor.destroy();
   aceEditor = null;
@@ -1835,17 +1845,17 @@ function openSample(name) {
     if (aceEditor) {
       aceEditor.session.setValue(editor.lastActionJson);
     }
-  }
+  };
   client.onerror = function () {
     error = "openSample: HTTP Request Error";
     document.getElementById('welcome').style.display = 'none';
     updateErrorAndWarning();
-  }
+  };
   client.ontimeout = function () {
     error = "openSample: HTTP Request Timeout";
     document.getElementById('welcome').style.display = 'none';
     updateErrorAndWarning();
-  }
+  };
 
   client.send();
 }
@@ -1882,17 +1892,17 @@ function importModule(name) {
     simulator.updateSimulation(false, true);
     editor.onActionComplete();
     updateModuleObjsMenu();
-  }
+  };
   client.onerror = function () {
     error = "importModule: HTTP Request Error";
     document.getElementById('welcome').style.display = 'none';
     updateErrorAndWarning();
-  }
+  };
   client.ontimeout = function () {
     error = "importModule: HTTP Request Timeout";
     document.getElementById('welcome').style.display = 'none';
     updateErrorAndWarning();
-  }
+  };
 
   client.send();
 }
@@ -2090,6 +2100,57 @@ function save() {
   hasUnsavedChange = false;
 }
 
+function openFileFromQuery(fileName) {
+  console.log('đã vào đây');
+  const filePath = `prepared_data/${fileName}`; // Thêm thư mục vào đường dẫn
+
+  fetch(filePath)
+    .then(response => {
+      if (!response.ok) throw new Error("File không tồn tại!");
+      return response.blob(); // Đọc file dưới dạng blob
+    })
+    .then(blob => {
+      blob.text().then(text => {
+        let isJSON = true;
+        try {
+          const parsed = JSON.parse(text);
+          if (typeof parsed !== 'object' || parsed === null) {
+            isJSON = false;
+          }
+        } catch (e) {
+          isJSON = false;
+        }
+
+        if (isJSON) {
+          editor.loadJSON(text);
+          hasUnsavedChange = false;
+          editor.onActionComplete();
+          if (aceEditor) {
+            aceEditor.session.setValue(editor.lastActionJson);
+          }
+        } else {
+          // Nếu không phải JSON, kiểm tra hình ảnh
+          let reader = new FileReader();
+          reader.onload = function (e) {
+            scene.backgroundImage = new Image();
+            scene.backgroundImage.src = e.target.result;
+            scene.backgroundImage.onload = function () {
+              simulator.updateSimulation(true, true);
+            };
+            scene.backgroundImage.onerror = function () {
+              scene.backgroundImage = null;
+              console.error("openFile: The file is neither a valid JSON scene nor an image file.");
+            };
+          };
+          reader.readAsDataURL(blob);
+        }
+      });
+    })
+    .catch(error => {
+      console.error("Lỗi khi mở file:", error);
+    });
+}
+
 function openFile(readFile) {
   var reader = new FileReader();
   reader.readAsText(readFile);
@@ -2121,13 +2182,13 @@ function openFile(readFile) {
         scene.backgroundImage.src = e.target.result;
         scene.backgroundImage.onload = function (e1) {
           simulator.updateSimulation(true, true);
-        }
+        };
         scene.backgroundImage.onerror = function (e1) {
           scene.backgroundImage = null;
           error = "openFile: The file is neither a valid JSON scene nor an image file.";
           updateErrorAndWarning();
-        }
-      }
+        };
+      };
       reader.readAsDataURL(readFile);
     }
   };
@@ -2154,7 +2215,7 @@ window.onbeforeunload = function (e) {
   if (hasUnsavedChange) {
     return "You have unsaved change.";
   }
-}
+};
 
 function confirmPositioning(ctrl, shift) {
   var xyData = JSON.parse('[' + document.getElementById('xybox').value.replace(/\(|\)/g, '') + ']');
@@ -2167,7 +2228,7 @@ function confirmPositioning(ctrl, shift) {
 function mapURL(url) {
   const localeData = window.localeData[window.lang];
   const route = (localeData.route !== undefined) ? localeData.route : '/' + window.lang;
-  const rootURL = '..'
+  const rootURL = '..';
   const urlMap = {
     "/home": rootURL + (localeData.home ? route : '') + '/',
     "/gallery": rootURL + (localeData.gallery ? route : '') + '/gallery/',
